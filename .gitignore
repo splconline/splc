@@ -8,3 +8,5 @@
 *.xlsx
 *.html
 *.sqbpro
+*.sqlite-journal
+*.backup

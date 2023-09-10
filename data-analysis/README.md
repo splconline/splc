@@ -7,19 +7,11 @@ To calculate various metrics regarding SPLC membership and enrolment (i.e. stude
 2. Note also that not all members are enrolled. For example some members are life members, while some enrolled in the previous financial year, while their annual membership extended into the financial year being measured
 
 ## Source data
-There are two tables that are used as souce data, the membership table (a list of all members) and enrolment table obtained from [ClassManager](http://classmanager.com.au) exports. For our purposes we import them into an SQL database as the table names `members` and `students`.
+There are two tables that are used as source data, the membership table (a list of all members) and enrolment table obtained from [ClassManager](http://classmanager.com.au) exports for a specified period (e.g. a teaching term, or the financial year). These are assembled into an SQL database then queried using the following SQL queries.
 
-## SQL code
+*The SQL code below assumes that these tables are assigned variable names `members` and `students`.*
 
-### Students who are not members
-E.g. they attended courses where membership was not required e.g WA Mahjong Tournament, St John Defibrillator Demonstration.
-
-```
-SELECT *
-FROM students LEFT JOIN members
-ON members.Pers_num = students.Pers_num
-WHERE members.Pers_num IS NULL
-```
+## SQL code & Results
 
 ### Members who are students
 The core group of students are members, as most of SPLC courses are members only. As a guideline, multiple week courses during the term are members-only, anything else is open to non-members
@@ -30,16 +22,34 @@ FROM members
 INNER JOIN students
 ON members.Pers_num = students.Pers_num
 ```
+*FY23 Result: 477*
 
-### Members who are not students
-As mentioned before, these are people who are life members, or whose memberships are on the cusps of the year.
+### Students who are not members
+E.g. they attended courses where membership was not required e.g WA Mahjong Tournament, St John Defibrillator Demonstration.
 
 ```
 SELECT *
-FROM members LEFT JOIN students
+FROM students LEFT JOIN members
 ON members.Pers_num = students.Pers_num
-WHERE students.Pers_num IS NULL
+WHERE members.Pers_num IS NULL
 ```
+*FY2023 Result: 223*
+
+### New & previous members
+Members who first joined in the period in question. The code below is to be edited as indicated depending on whether you want to output members who joined before a particular date, or within a date range.
+
+```
+SELECT Pers_num,Mem_Num,Given,Surname,
+	   DATE(substr(Mem_Num,1,4) || '-' || substr(Mem_Num,5,2)|| '-' || '01') AS TheDate
+FROM members
+WHERE
+-- Comment and edit the line below as required
+--  TheDate BETWEEN '2022-07-01' AND '2023-06-30'
+	TheDate < '2022-07-01'
+ORDER BY TheDate
+```
+*FY2023 Results: 482 previous members, 139 new members.*
+
 
 ## To Do
 
