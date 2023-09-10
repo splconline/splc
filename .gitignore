@@ -1,9 +1,9 @@
 .DS_Store
-.csv
-.db
-.db3
-.sqlite
-.sqlite3
-.xls
-.xlsx
-.html
+*.csv
+*.db
+*.db3
+*.sqlite
+*.sqlite3
+*.xls
+*.xlsx
+*.html
