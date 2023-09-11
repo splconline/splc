@@ -36,7 +36,7 @@ WHERE members.Pers_num IS NULL
 *FY2023 Result: 223*
 
 ### New & previous members
-Members who first joined in the period in question. The code below is to be edited as indicated depending on whether you want to output members who joined before a particular date, or within a date range.
+Members who first joined in the period in question. The code below is to be edited as indicated depending on whether you want to output members who joined before a particular date, or within a date range. NOTE: This includes currently members who are not students! Need to filter out non-students.
 
 ```
 SELECT Pers_num,Mem_Num,Given,Surname,
@@ -55,46 +55,46 @@ ORDER BY TheDate
 
 1. CUSTOMERS PER YEAR
 
-1.1. Customers (Non-Members, B2C)
-Customers (Non-Members), TOTAL: 223
-Customers (Non-Members), NEW 
-Customers (Non-Members), REPEAT
+1.1. Customers (Non-Members, B2C)  
+Customers (Non-Members), TOTAL: 223  
+Customers (Non-Members), NEW  
+Customers (Non-Members), REPEAT  
 Customers (Non-Members), Average life time
 
-1.2. Customers (Members, B2C)
-Customers (Members), TOTAL: 477
-Customers (Members), NEW 
-Customers (Members), REPEAT
-Customers (Members), Average life time
+1.2. Customers (Members, B2C)  
+Customers (Members), TOTAL: 477  
+Customers (Members), NEW:  
+Customers (Members), REPEAT  
+Customers (Members), Average life time  
 
-1.3 Customers (B2B)
-Customers ( B2B  ), TOTAL
-Customers ( B2B  ), NEW 
-Customers ( B2B  ), REPEAT
-Customers ( B2B  ), Average life time
+1.3 Customers (B2B)  
+Customers ( B2B  ), TOTAL  
+Customers ( B2B  ), NEW  
+Customers ( B2B  ), REPEAT  
+Customers ( B2B  ), Average life time  
 
-1.4 Customers (B2G)
-Customers ( B2G  ), TOTAL
-Customers ( B2G  ), NEW 
-Customers ( B2G  ), REPEAT
-Customers ( B2G  ), Average life time
+1.4 Customers (B2G)  
+Customers ( B2G  ), TOTAL  
+Customers ( B2G  ), NEW  
+Customers ( B2G  ), REPEAT  
+Customers ( B2G  ), Average life time  
 
 Is Membership only for individuals, or does SPLC also offer corporate membership?
 
-1.5 Revenues/Customer  ($/Year, $/booking)
-Customers (Non-Members, B2C)
-Customers (Members, B2C)
-Customers (B2B)
+1.5 Revenues/Customer  ($/Year, $/booking)  
+Customers (Non-Members, B2C)  
+Customers (Members, B2C)  
+Customers (B2B)  
 Customers (B2G); e.g government funded IT programs
 
-1.6 Customer demographics (in percentage per group, if available)
-by age groups (eg "20%: 55-75y")
-by gender (f/m/other)
-by education
-by income
-by ancestry
+1.6 Customer demographics (in percentage per group, if available)  
+by age groups (eg "20%: 55-75y")  
+by gender (f/m/other)  
+by education  
+by income  
+by ancestry  
 by relationship (family members, non related)
 
-1.7 NEW CUSTOMER TOP/FLOPs (day, week, month)
-When did MOST NEW customers sign up ? (eg. April, T1 start, Tuesdays mornings?)
-When do the LEAST NEW customers sign up ? (Term break, Sundays,)
+1.7 NEW CUSTOMER TOP/FLOPs (day, week, month)  
+When did MOST NEW customers sign up ? (eg. April, T1 start, Tuesdays mornings?)  
+When do the LEAST NEW customers sign up ? (Term break, Sundays,)  
