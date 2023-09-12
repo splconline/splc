@@ -35,21 +35,45 @@ WHERE members.Pers_num IS NULL
 ```
 *FY2023 Result: 223*
 
-### New & previous members
-Members who first joined in the period in question. The code below is to be edited as indicated depending on whether you want to output members who joined before a particular date, or within a date range. NOTE: This includes currently members who are not students! Need to filter out non-students.
+### New & previous student members
+Student members who first joined in the period in question. The code below is to be edited as indicated depending on whether you want to output student members who joined before a particular date, or within a date range.
 
 ```
-SELECT Pers_num,Mem_Num,Given,Surname,
-	   DATE(substr(Mem_Num,1,4) || '-' || substr(Mem_Num,5,2)|| '-' || '01') AS TheDate
-FROM members
+SELECT members.Pers_num,members.Mem_Num,members.Given, members.Surname,
+        DATE(substr(members.Mem_Num,1,4) || '-' || substr(members.Mem_Num,5,2)|| '-' || '01') AS TheDate   
+FROM members INNER JOIN students
+ON members.Pers_num  = students.Pers_num
 WHERE
 -- Comment and edit the line below as required
 --  TheDate BETWEEN '2022-07-01' AND '2023-06-30'
-	TheDate < '2022-07-01'
+    TheDate < '2022-07-01'
 ORDER BY TheDate
 ```
-*FY2023 Results: 482 previous members, 139 new members.*
+*FY2023 Results: 352 previous student members, 123 new student members.*
 
+### Average life time
+For current members, what is the difference between the last date of FY23 and their joining date. Show the lifetimes first to make sure we're on the right track:
+
+```
+SELECT members.Pers_num,members.Mem_Num,members.Given, members.Surname,
+        DATE(substr(members.Mem_Num,1,4) || '-' || substr(members.Mem_Num,5,2)|| '-' || '01') AS TheDate,
+		JULIANDAY('2023-07-01') - JULIANDAY(DATE(substr(members.Mem_Num,1,4) || '-' || substr(members.Mem_Num,5,2)|| '-' || '01'))   AS TheDateDiff
+FROM members INNER JOIN students
+ON members.Pers_num  = students.Pers_num
+ORDER BY TheDate
+```
+
+Then average it:
+
+```
+SELECT AVG(JULIANDAY('2023-07-01') - JULIANDAY(DATE(substr(members.Mem_Num,1,4) || '-' || substr(members.Mem_Num,5,2)|| '-' || '01'))) 
+                 AS TheAverage
+FROM members INNER JOIN students
+ON members.Pers_num  = students.Pers_num
+```
+
+
+*FY2023 Results: 1183.46 days i.e. approx. 3 years & 3 months*
 
 ## To Do
 
@@ -63,9 +87,9 @@ Customers (Non-Members), Average life time
 
 1.2. Customers (Members, B2C)  
 Customers (Members), TOTAL: 477  
-Customers (Members), NEW:  
-Customers (Members), REPEAT  
-Customers (Members), Average life time  
+Customers (Members), NEW: 123  
+Customers (Members), REPEAT: 352  
+Customers (Members), Average life time: 1183.46 days i.e. approx. 3 years & 3 months  
 
 1.3 Customers (B2B)  
 Customers ( B2B  ), TOTAL  
