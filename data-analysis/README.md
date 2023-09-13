@@ -7,9 +7,9 @@ To calculate various metrics regarding SPLC membership and enrolment (i.e. stude
 2. Note also that not all members are enrolled. For example some members are life members, while some enrolled in the previous financial year, while their annual membership extended into the financial year being measured
 
 ## Source data
-There are two tables that are used as source data, the membership table (a list of all members) and enrolment table obtained from [ClassManager](http://classmanager.com.au) exports for a specified period (e.g. a teaching term, or the financial year). These are assembled into an SQL database then queried using the following SQL queries.
+There are three tables that are used as source data, the membership table (a list of all members), enrolment table, and receipts table. Tables are obtained from [ClassManager](http://classmanager.com.au) exports for a specified period (e.g. a teaching term, or the financial year). These are assembled into an SQL database then queried using the following SQL queries.
 
-*The SQL code below assumes that these tables are assigned variable names `members` and `students`.*
+*The SQL code below assumes that these tables are assigned variable names `members`, `students` and `receipts`.*
 
 ## SQL code & Results
 
