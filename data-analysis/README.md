@@ -75,21 +75,27 @@ ON members.Pers_num  = students.Pers_num
 
 *FY2023 Results: 1183.46 days i.e. approx. 3 years & 3 months*
 
-## To Do
+### TODO: Revenues per Customer who are Members/Non-Members
+
+* Get revenues from receipts
+* In the `Receipts` export file, `Given` is the given name, while in a `People` export, `Given` is the given name concatenated with the nickname within brackets i.e. `Sandra` vs `Sandra(Sandy)`. Need to clean this data before we do the analysis.
+* Once it is cleaned, join the members table to the receipts table, group by person & sum up the amounts
+
+## List of Analyses To Do
 
 1. CUSTOMERS PER YEAR
 
 1.1. Customers (Non-Members, B2C)  
-Customers (Non-Members), TOTAL: 223  
+DONE Customers (Non-Members), TOTAL: 223  
 Customers (Non-Members), NEW  
 Customers (Non-Members), REPEAT  
 Customers (Non-Members), Average life time
 
 1.2. Customers (Members, B2C)  
-Customers (Members), TOTAL: 477  
-Customers (Members), NEW: 123  
-Customers (Members), REPEAT: 352  
-Customers (Members), Average life time: 1183.46 days i.e. approx. 3 years & 3 months  
+DONE Customers (Members), TOTAL: 477  
+DONE Customers (Members), NEW: 123  
+DONE Customers (Members), REPEAT: 352  
+DONE Customers (Members), Average life time: 1183.46 days i.e. approx. 3 years & 3 months  
 
 1.3 Customers (B2B)  
 Customers ( B2B  ), TOTAL  
