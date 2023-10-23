@@ -1,0 +1,2 @@
+ALTER TABLE GSTCollGLReport
+RENAME COLUMN "Credit($)" TO Credit;
