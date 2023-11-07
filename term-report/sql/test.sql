@@ -1,3 +1,7 @@
+/*
+Extracts the course category code for the course code (e.g. L from L4, AC from AC26)
+
+*/
 SELECT
     Code,
     CASE
