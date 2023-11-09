@@ -8,3 +8,5 @@ FROM
 WHERE
     substr(Code,1,1)="L"
 ORDER BY Profit
+
+-- Son of a bitch what happened
