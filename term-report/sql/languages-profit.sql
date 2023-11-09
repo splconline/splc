@@ -4,9 +4,10 @@ SELECT Course,Code, TotStus, FirstSession,
  	CAST(replace(substr(TotalIncome,2),",","") AS FLOAT) -
   	CAST(replace(substr(OperatingFee,2),",","") AS FLOAT) AS Profit,
 	substr(FirstSession, 1, instr(FirstSession,' ')) AS TheDate,
-	CASE length(substr(FirstSession, 1, instr(FirstSession,' ')))
-	    WHEN 10 THEN '0' || substr(FirstSession, 1, instr(FirstSession,' '))
-		ELSE substr(FirstSession, 1, instr(FirstSession,' ')) AS ThePadDate
+--	CASE length(substr(FirstSession, 1, instr(FirstSession,' ')))
+--	    WHEN 10 THEN '0' || substr(FirstSession, 1, instr(FirstSession,' '))
+--		ELSE substr(FirstSession, 1, instr(FirstSession,' ')) AS ThePadDate
+--    END
 	substr(substr(FirstSession, 1, instr(FirstSession,' ')), 8, 4) || '-' || 
             CASE substr(substr(FirstSession, 1, instr(FirstSession,' ')), 4, 3)
                 WHEN 'Jan' THEN '01'
