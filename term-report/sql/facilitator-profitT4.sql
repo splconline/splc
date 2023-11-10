@@ -43,6 +43,6 @@ FROM
     AND course_incomeT4.FirstSession = course_historyT4.Session || " " || course_historyT4.Time
 WHERE
 -- for T4: AC, HW, L, SC, SB
---    substr(course_incomeT4.Code,1,1)="L" AND
+    substr(course_incomeT4.Code,1,1)  =  "L" AND
     date(ISODate) > date('2023-09-01')
-ORDER BY Facilitator
+ORDER BY Profit DESC
