@@ -11,8 +11,8 @@ SELECT
 		ELSE substr(Code,1,1)
 	END AS CodeCat,
 	SUM(CAST(replace(substr(TotalIncome,2,length(TotalIncome)),",","") AS FLOAT)) AS Income,
-  	SUM(CAST(replace(substr(OperatingFee,2,length(OperatingFee)),",","") AS FLOAT)) AS OpFee,
-	SUM(CAST(replace(substr(TotalIncome,2,length(TotalIncome)),",","") AS FLOAT)) - 
-	SUM(CAST(replace(substr(OperatingFee,2,length(OperatingFee)),",","") AS FLOAT)) AS Profit
+    SUM(CAST(replace(substr(OperatingFee,2,length(OperatingFee)),",","") AS FLOAT)) AS OpFee,
+  	SUM(CAST(replace(substr(TotalIncome,2,length(TotalIncome)),",","") AS FLOAT)) - 
+  	SUM(CAST(replace(substr(OperatingFee,2,length(OperatingFee)),",","") AS FLOAT)) AS Profit
 FROM course_incomeT4
     GROUP BY CodeCat

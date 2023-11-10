@@ -1,4 +1,8 @@
-SELECT course_incomeT4.Code, course_incomeT4.Course, course_incomeT4.TotStus,
+SELECT
+    CASE
+	    WHEN substr(course_historyT4.Code,2,1) GLOB '[A-Z]' THEN substr(course_historyT4.Code,1,2)
+		ELSE substr(course_historyT4.Code,1,1)
+    END AS CodeCat, course_incomeT4.Code, course_incomeT4.Course, course_incomeT4.TotStus,
     CAST(replace(substr(course_incomeT4.TotalIncome,2),",","") AS FLOAT) AS Income,
     CAST(replace(substr(course_incomeT4.OperatingFee,2),",","") AS FLOAT) AS Fee,
  	CAST(replace(substr(course_incomeT4.TotalIncome,2),",","") AS FLOAT) -
@@ -41,8 +45,8 @@ FROM
     course_incomeT4 INNER JOIN course_historyT4
     ON course_incomeT4.Code = course_historyT4.Code
     AND course_incomeT4.FirstSession = course_historyT4.Session || " " || course_historyT4.Time
-WHERE
+--WHERE
 -- for T4: AC, HW, L, SC, SB
-    substr(course_incomeT4.Code,1,1)  =  "L" AND
-    date(ISODate) > date('2023-09-01')
+--    substr(course_incomeT4.Code,1,1)  =  "L" AND
+--    date(ISODate) > date('2023-09-01')
 ORDER BY Profit DESC
