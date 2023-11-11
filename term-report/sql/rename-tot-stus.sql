@@ -1,2 +1,2 @@
-ALTER TABLE course_incomeT4
+ALTER TABLE course_income
 RENAME COLUMN "Tot-Stus" TO TotStus;

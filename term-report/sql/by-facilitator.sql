@@ -1,7 +1,7 @@
 SELECT
-    course_incomeT4.Code, course_incomeT4.FirstSession, course_incomeT4.Course, course_historyT4.Facilitator
+    course_income.Code, course_income.FirstSession, course_income.Course, course_history.Facilitator
 FROM
-    course_incomeT4 INNER JOIN course_historyT4
-    ON course_incomeT4.Code = course_historyT4.Code
-    AND course_incomeT4.FirstSession = course_historyT4.Session || " " || course_historyT4.Time
+    course_income INNER JOIN course_history
+    ON course_income.Code = course_history.Code
+    AND course_income.FirstSession = course_history.Session || " " || course_history.Time
 

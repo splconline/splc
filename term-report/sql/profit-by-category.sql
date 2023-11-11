@@ -14,5 +14,5 @@ SELECT
     SUM(CAST(replace(substr(OperatingFee,2,length(OperatingFee)),",","") AS FLOAT)) AS OpFee,
   	SUM(CAST(replace(substr(TotalIncome,2,length(TotalIncome)),",","") AS FLOAT)) - 
   	SUM(CAST(replace(substr(OperatingFee,2,length(OperatingFee)),",","") AS FLOAT)) AS Profit
-FROM course_incomeT4
+FROM course_income
     GROUP BY CodeCat
