@@ -4,9 +4,10 @@
 *.db3
 *.sqlite
 *.sqlite3
+*.sqlite-journal
+*.sqlite3-journal
+*.sqbpro
 *.xls
 *.xlsx
 *.html
-*.sqbpro
-*.sqlite-journal
 *.backup
