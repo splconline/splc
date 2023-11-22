@@ -34,7 +34,7 @@ df.columns
 
 df.drop(['Title','Mem_num', 'Street', 'Suburb', 'State',
        'PostC', 'Status', 'Paid', 'Creche',
-       'Notes','Phone','Mobile'], axis=1, inplace=True)
+       'Notes'], axis=1, inplace=True)
 
 
 # In[5]:
