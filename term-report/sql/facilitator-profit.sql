@@ -7,6 +7,7 @@ SELECT
     CAST(replace(substr(course_income.OperatingFee,2),",","") AS FLOAT) AS Fee,
  	CAST(replace(substr(course_income.TotalIncome,2),",","") AS FLOAT) -
   	CAST(replace(substr(course_income.OperatingFee,2),",","") AS FLOAT) AS Profit,
+-- Below is to get date as ISO so that we can do filtering later on	
 	CASE length(substr(course_income.FirstSession, 1, instr(course_income.FirstSession,' ')))
         WHEN 11 THEN
 	        substr(course_income.FirstSession,7,4) || '-' ||
@@ -51,8 +52,8 @@ FROM
    2. Filter out classes from the previous term that 'leak' into the curent term
 */
 
---WHERE
+WHERE
 -- for : AC, HW, L, SC, SB
 --    substr(course_income.Code,1,1)  =  "L" AND
---    date(ISODate) > date('2023-09-01')
+    date(ISODate) > date('2023-09-01')
 ORDER BY Profit DESC

@@ -3,6 +3,9 @@
 Extracts the category code (e.g. AC, SC, L etc) from the course code
 (e.g. AC25, SC22, L5), then calculates profit per category.
 
+ClassManager does the same but without OpFee, so it's good to run just to make sure
+everything is working OK.
+
 */
  
 SELECT
