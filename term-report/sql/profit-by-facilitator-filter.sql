@@ -69,3 +69,5 @@ GROUP BY
     Facilitator
 ORDER BY AvgProfit DESC
 
+-- And what is happening here
+
