@@ -56,7 +56,7 @@ FROM
 WHERE
 -- for : AC, HW, L, SC, SB
 --    substr(course_income.Code,1,1)  =  "L" AND
-    date(ISODate) > date('2023-09-01')
+    date(ISODate) > date('2023-01-01')
 ORDER BY Profit DESC
 )
 
