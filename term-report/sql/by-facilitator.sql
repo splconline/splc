@@ -5,3 +5,4 @@ FROM
     ON course_income.Code = course_history.Code
     AND course_income.FirstSession = course_history.Session || " " || course_history.Time
 
+-- What is happening here

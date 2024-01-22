@@ -3,7 +3,7 @@ SELECT
     CASE
 	    WHEN substr(course_history.Code,2,1) GLOB '[A-Z]' THEN substr(course_history.Code,1,2)
 		ELSE substr(course_history.Code,1,1)
-    END AS CodeCat, course_income.Code, course_income.Course, course_income.'Tot-Stus',
+    END AS CodeCat, course_income.Code, course_income.Course, course_income."Tot-Stus",
     CAST(replace(substr(course_income.TotalIncome,2),",","") AS FLOAT) AS Income,
     CAST(replace(substr(course_income.OperatingFee,2),",","") AS FLOAT) AS Fee,
  	CAST(replace(substr(course_income.TotalIncome,2),",","") AS FLOAT) -
@@ -62,10 +62,12 @@ ORDER BY Profit DESC
 
 SELECT
     Facilitator, SUM(Income) AS TotalIncome, SUM(Fee) AS TotalFee, SUM(Profit) AS TotalProfit,
-	Sum('Tot-Stus') AS TotalStudents, Count(Facilitator) AS NumberCourses, AVG(Profit) AS AvgProfit
+	Sum("Tot-Stus") AS TotalStudents, Count(Facilitator) AS NumberCourses, AVG(Profit) AS AvgProfit
 FROM
     'profit'
 GROUP BY
     Facilitator
 ORDER BY AvgProfit DESC
+
+-- And what is happening here
 
