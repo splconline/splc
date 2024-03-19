@@ -62,11 +62,7 @@ ORDER BY Profit DESC
 
 SELECT
     CodeCat, SUM(Income) AS TotalIncome, SUM(Fee) AS TotalFee, SUM(Profit) AS TotalProfit,
-<<<<<<< HEAD
-	SUM('Tot-Stus') AS TotalStudents, Count(Facilitator) AS NumberCourses, AVG(Profit) AS AvgProfit
-=======
 	Sum("Tot-Stus") AS TotalStudents, Count(Facilitator) AS NumberCourses, AVG(Profit) AS AvgProfit
->>>>>>> e9bf5a6eda1954fbeb86b52eb382fdcd52503ff3
 FROM
     'profit'
 GROUP BY
