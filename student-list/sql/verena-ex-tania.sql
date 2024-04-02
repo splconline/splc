@@ -1,7 +1,10 @@
 /* 
    Extracts Verena's students who were not Tania's students.
    Done using CTE because need to extract unique students from
-   .csv concatenated from all ClassManager exported student lists
+   .csv concatenated from all ClassManager exported student lists.
+
+   To do the concatenation, put all the .csv in one folder, then
+   cat *.* >> verena.csv.
 */
 
 WITH verenaUnq AS (
