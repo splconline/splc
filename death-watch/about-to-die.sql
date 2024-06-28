@@ -39,5 +39,5 @@ END AS ISODate,
 
  Students, MinQuota
 FROM course_history
-WHERE Students < MinQuota
+WHERE  Students < MinQuota AND ISODate > '2024-06-30'
 ORDER BY ISODate
