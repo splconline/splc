@@ -1,29 +1,46 @@
 # Didi Tasks 2025
 ## Courses
-* Create programs with teachers
-* Roll over the new term by week 6 of current term
+* Create new programs where required
+* Roll over existing programs into the upcoming term by week 6 of current term
 * Produce online and printed program
 * Manage class cancellations/consolidations due to quotas
 
 ## Space
-* Table setup for each class
-* Bulk external bookings
-* Ad hoc external bookings
-* Spacetoco bookings
+* Oversee table setup for each class
+* Take bulk & ad hoc external room bookings
+* Manage Spacetoco room bookings
 * Manage room booking clashes
+* Manage access keys
 
-## People
+## People Management
 ### Teachers
-* Manage teacher schedule (some will start late/early)
+* Manage teacher schedule (some will start the term late/early)
 * Source new teachers where necessary
 * Appraise teacher proposals
+* Manage well-being & disputes
 
 ### Volunteers & Casual Staff
 * Provide training
 * Schedule & chair quaterly meeting
-* Maintain Procedures Manual
+* Maintain the Procedures Manual
+
+### Customers
+* Take enquiries by email, phone & in-person
+* Assist with non-standard enrolment requests
 
 ## Marketing
+### Networking
+* Maintaining connection with network partners
+* Exploring and managing collaborations with network partners
+
+### Promotion
+* Email newsletter
+* Blog marketing
+* Facebook, Google Business & LinkedIn
+* Posters/flyers on community noticeboards & cafes
+* Newspaper classifieds, display advertising & editorial
+* Oversee graphic design for all of the above
+* Radio
 
 ## Finance
 
@@ -48,6 +65,6 @@
 ### Annual
 * Collect figures required by insurers
 * Collect figures required by ACNC
-* Collect figures required by auditor
-* Asset sighting & asset register update
+* Oversee collection of figures required by auditor
+* Oversee asset sighting & asset register update
 
